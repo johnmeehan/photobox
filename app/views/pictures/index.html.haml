@@ -1,21 +1,24 @@
-%h1 Listing pictures
+.container 
+  .row
+    %h1 Pictures
 
-%table
-  %tr
-    %th Title
-    %th Description
-    %th
-    %th
-    %th
+    %table.table.table-hover
+      %tbody 
+        %tr
+          %th Title
+          %th Description
+          %th
+          %th
+          %th
 
-  - @pictures.each do |picture|
-    %tr
-      %td= picture.title
-      %td= picture.description
-      %td= link_to 'Show', picture
-      %td= link_to 'Edit', edit_picture_path(picture)
-      %td= link_to 'Destroy', picture, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        - @pictures.each do |picture|
+          %tr
+            %td= picture.title
+            %td= picture.description
+            %td= link_to 'Show', picture
+            %td= link_to 'Edit', edit_picture_path(picture)
+            %td= link_to 'Destroy', picture, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-%br
+    %br
 
-= link_to 'New Picture', new_picture_path
+    = link_to 'Upload New Picture', new_picture_path

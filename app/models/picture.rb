@@ -7,6 +7,6 @@ class Picture
   property :title, String
   property :description, Text
 
-  mount_uploader :image, PictureUploader
+  mount_uploader :file, PictureUploader
 
 end
