@@ -73,6 +73,7 @@ gem 'jquery-rails', '~> 2.0.1'
 # To use debugger
 # gem 'ruby-debug19', '~> 0.11.6', :require => 'ruby-debug'
 group :development, :test do 
+	gem 'capybara'
 	gem 'rspec-rails'
 	gem "factory_girl_rails"
 	gem 'guard'     	#autorun test when there is a change

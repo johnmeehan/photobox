@@ -8,5 +8,5 @@ class Picture
   property :description, Text
 
   mount_uploader :file, PictureUploader
-
+  
 end

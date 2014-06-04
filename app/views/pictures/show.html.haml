@@ -1,7 +1,7 @@
-%p#notice.alert.alert-success= notice
+%p#notice= notice
 
 %p
-  =image_tag @picture.file.to_s, width: "200px"
+  =image_tag @picture.file.to_s, width: "400px", class: "img-thumbnail"
 %p 
   %b Title:
   = @picture.title
