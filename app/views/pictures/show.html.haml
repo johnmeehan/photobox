@@ -1,14 +1,31 @@
 %p#notice= notice
 
 %p
-  =image_tag @picture.file.to_s, width: "400px", class: "img-thumbnail"
+	=image_tag @picture.file.to_s, width: "400px", class: "img-thumbnail"
 %p 
-  %b Title:
-  = @picture.title
+	%b Title:
+	= @picture.title
 %p
-  %b Description:
-  = @picture.description
+	%b Description:
+	= @picture.description
 
 = link_to 'Edit', edit_picture_path(@picture)
 \|
 = link_to 'Back', pictures_path
+
+.well
+	=form_for(@comment) do |f|
+		.field
+			= f.text_area :content, placeholder: "Post a comment..."
+		=f.submit "Post", class: 'btn btn-large btn-primary' 
+.panel.panel-info 
+	.panel-heading
+		Comments 
+	.table
+		%tr 
+			%th Comment
+		
+		-@comments.each do |comment|
+			%tr 
+				%td= comment.content
+

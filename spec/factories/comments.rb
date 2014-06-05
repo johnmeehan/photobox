@@ -3,6 +3,6 @@
 FactoryGirl.define do
   factory :comment do
     content "MyString"
-    picture_id ""
+    # picture_id ""
   end
 end

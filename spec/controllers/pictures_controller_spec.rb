@@ -40,7 +40,7 @@ RSpec.describe PicturesController, :type => :controller do
   describe "GET index" do
     it "assigns all pictures as @pictures" do
       picture = Picture.create! valid_attributes
-      get :index, {}, valid_session
+      get :index 
       expect(assigns(:pictures)).to eq([picture])
     end
   end
@@ -51,11 +51,22 @@ RSpec.describe PicturesController, :type => :controller do
       get :show, {:id => picture.to_param}, valid_session
       expect(assigns(:picture)).to eq(picture)
     end
+
+    it 'retrieves the comments for a picture' do 
+      picture = FactoryGirl.create(:picture)
+      comment = FactoryGirl.build(:comment)
+      picture.comments << comment
+      picture.save
+
+      get :show, {:id => picture.to_param}
+      expect(assigns(:comments)).to eq([comment])
+
+    end
   end
 
   describe "GET new" do
     it "assigns a new picture as @picture" do
-      get :new, {}, valid_session
+      get :new 
       expect(assigns(:picture)).to be_a_new(Picture)
     end
   end

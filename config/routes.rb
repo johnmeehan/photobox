@@ -1,5 +1,10 @@
 Photobox::Application.routes.draw do
+  get "comments/create"
+
+  get "comments/destroy"
+
   resources :pictures
+  resources :comments, only: [:create, :destroy]
   root :to => 'pictures#index'
 
   # The priority is based upon order of creation:
