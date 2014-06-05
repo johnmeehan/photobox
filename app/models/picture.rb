@@ -4,5 +4,5 @@ class Picture
   property :title, String
   property :description, Text
   mount_uploader :file, PictureUploader
-  has n, :comments
+  has n, :comments, constraints: :destroy
 end
