@@ -3,7 +3,11 @@ class PicturesController < ApplicationController
   # GET /pictures.json
   def index
     # @pictures = Picture.all
-    @pictures = Picture.paginate(:page => params[:page], :per_page => 5)
+    if params[:query].present?
+      @pictures = Picture.search(params[:query])
+    else
+      @pictures = Picture.paginate(:page => params[:page], :per_page => 5)
+    end
 
     respond_to do |format|
       format.html # index.html.erb
