@@ -13,19 +13,8 @@
 \|
 = link_to 'Back', pictures_path
 
-.well
-	=form_for(@comment) do |f|
-		.field
-			= f.text_area :content, placeholder: "Post a comment..."
-		=f.submit "Post", class: 'btn btn-large btn-primary' 
-.panel.panel-info 
-	.panel-heading
-		Comments 
-	.table
-		%tr 
-			%th Comment
-		
-		-@comments.each do |comment|
-			%tr 
-				%td= comment.content
+= render 'comments/comment', object: @comment
+
+= render "comments/comments_table", object: @picture
+
 
