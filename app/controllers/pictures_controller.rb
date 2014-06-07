@@ -4,7 +4,7 @@ class PicturesController < ApplicationController
   def index
     # @pictures = Picture.all
     if params[:query].present?
-      @pictures = Picture.search(params[:query])
+      @pictures = Picture.search(params[:query]).records
     else
       @pictures = Picture.paginate(:page => params[:page], :per_page => 5)
     end

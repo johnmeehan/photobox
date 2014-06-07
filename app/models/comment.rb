@@ -9,6 +9,6 @@ class Comment
   # To have its contents included with Elasticsearch
   # include Tire::Model::Search
   # include Tire::Model::Callbacks
-  include Elasticsearch::Model
-  include Elasticsearch::Model::Callbacks
+  # include Elasticsearch::Model
+  # include Elasticsearch::Model::Callbacks
 end

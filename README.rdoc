@@ -1,19 +1,31 @@
-John Meehan 
+# John Meehan 
 
-Features:
+## Features:
 1. Upload a picture
-2. Using datamapper gem
+2. Use the datamapper gem
 3. Display a paginated list of pictures
 4. Show page for each picture
-5. Allow Comments on the show page
+5. Allow Comments on the picture#show page
 6. Create Comments via Ajax
-7. after save Comment store title, description & id in elastic search.
+7. after save Comment store title, description & id in elasticsearch.
 8. Viewing a picture there should be a "show comments" link.
-9. Link loads comments via ajax from elastic search and display them.
+9. Link loads comments via ajax from elasticsearch and display them.
 
+## Main Points:
+Elasticsearch, Datamapper, Carrierwave, Rails, Rspec, Capybara,Haml
 
-
-Notes: 
+## Notes: 
   Datamapper no longer activly developed.
+  Warnings running rspec due to Deprications in datamapper
 
-Warnings running rspec due to Deprications in datamapper
+
+
+### Elasticsearch
+```
+elasticsearch -f
+```
+
+    Import all indices from `app/models` (or use DIR environment variable).
+````    
+    $ rake environment elasticsearch:import:all DIR=app/models
+````

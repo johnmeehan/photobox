@@ -15,19 +15,29 @@ feature "Elasticsearch", :type => :feature do
 	scenario "Search for pictures with Fireworks content" do
 		visit root_path 
 		fill_in "query", with: 'Fireworks'
-		expect(page).to have_text("Fireworks", count: 2) 
-		expect(page).to have_css("#picture", count: 2) 
-		# fill_in
+		click_button "Search"
+		expect(page).to have_text("Fireworks", count: 1) 
+		expect(page).to have_css("#picture", count: 1) 
 	end
 
 	scenario "Search for pictures with Party content" do
 		visit root_path 
 		fill_in "query", with: 'Party'
+		click_button "Search"
 		expect(page).to have_css("#picture", count: 1) 
-		# fill_in
 	end
 
-	# scenario "Bad Search" do
-	# 	#3
-	# end
+	scenario "Search for multiple results" do
+		visit root_path 
+		fill_in "query", with: 'Limerick'
+		click_button "Search"
+		expect(page).to have_css("#picture", count: 2) 
+	end
+
+	scenario "Bad search" do
+		visit root_path 
+		fill_in "query", with: 'spoons'
+		click_button "Search"
+		expect(page).to have_css('.well', text:"No Pictures!") 
+	end
 end

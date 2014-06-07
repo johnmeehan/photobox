@@ -1,11 +1,6 @@
 .row.col-lg-12
   %h1 Pictures
-
-  = form_tag pictures_path, method: :get do
-    %p
-      = text_field_tag :query, params[:query], class: "search"
-      = submit_tag "Search", name: nil
-  
+  = render 'layouts/search'
   - if @pictures.any?
     %table.table.table-hover
       %tbody 
@@ -25,6 +20,6 @@
             %td= link_to 'Destroy', picture, :method => :delete, :data => { :confirm => 'Are you sure?' }  
       = will_paginate @pictures 
   - else 
-    %h2.well No Pictures! Try uploading some.    
+    %h2.h2.well No Pictures! Try uploading some.    
   %br
     = link_to 'Upload New Picture', new_picture_path, class:"btn btn-large btn-success "

@@ -37,9 +37,6 @@ gem 'dm-aggregates',   DM_VERSION
 gem 'dm-timestamps',   DM_VERSION
 gem 'dm-observer',     DM_VERSION
 
-
-
-
 ##
 gem 'bootstrap-sass'
 gem 'will_paginate', '~> 3.0'
@@ -49,8 +46,11 @@ gem 'sprockets', '=2.2.2.backport2'
 gem 'haml-rails'
 gem 'carrierwave-datamapper', :require => 'carrierwave/datamapper'
 # gem 'tire' 
-gem 'elasticsearch-model', git: 'git://github.com/elasticsearch/elasticsearch-rails.git'
-gem 'elasticsearch-rails', git: 'git://github.com/elasticsearch/elasticsearch-rails.git'
+gem "elasticsearch", 		git: "git://github.com/elasticsearch/elasticsearch-ruby.git"
+gem 'elasticsearch-model', 	git: 'git://github.com/elasticsearch/elasticsearch-rails.git'
+gem 'elasticsearch-rails', 	git: 'git://github.com/elasticsearch/elasticsearch-rails.git'
+
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

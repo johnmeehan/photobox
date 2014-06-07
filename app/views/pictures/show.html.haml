@@ -13,8 +13,9 @@
 \|
 = link_to 'Back', pictures_path
 
-= render 'comments/comment', object: @comment
-
-= render "comments/comments_table", object: @picture
+.row#comment_form
+	= render 'comments/comment', object: @comment
+.row#comments 
+	= render "comments/comments_table", object: @picture
 
 

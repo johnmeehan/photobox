@@ -9,6 +9,19 @@ GIT
     elasticsearch-rails (0.1.3)
 
 GIT
+  remote: git://github.com/elasticsearch/elasticsearch-ruby.git
+  revision: 9d79d16a1b1286a55109b3235af02ae627befc9d
+  specs:
+    elasticsearch (1.0.2)
+      elasticsearch-api (= 1.0.2)
+      elasticsearch-transport (= 1.0.2)
+    elasticsearch-api (1.0.2)
+      multi_json
+    elasticsearch-transport (1.0.2)
+      faraday
+      multi_json
+
+GIT
   remote: git://github.com/guilleiguaran/sass-rails.git
   revision: 0393d9e1a6e4a776e61f16fb75f97971b9f4abd2
   branch: backport
@@ -119,14 +132,6 @@ GEM
       dm-core (~> 1.2.0)
     do_sqlite3 (0.10.14)
       data_objects (= 0.10.14)
-    elasticsearch (1.0.2)
-      elasticsearch-api (= 1.0.2)
-      elasticsearch-transport (= 1.0.2)
-    elasticsearch-api (1.0.2)
-      multi_json
-    elasticsearch-transport (1.0.2)
-      faraday
-      multi_json
     em-websocket (0.5.1)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.6.0)
@@ -299,6 +304,7 @@ DEPENDENCIES
   dm-transactions (~> 1.2.0)
   dm-types (~> 1.2.0)
   dm-validations (~> 1.2.0)
+  elasticsearch!
   elasticsearch-model!
   elasticsearch-rails!
   factory_girl_rails
