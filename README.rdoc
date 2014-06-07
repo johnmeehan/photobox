@@ -18,14 +18,16 @@ Elasticsearch, Datamapper, Carrierwave, Rails, Rspec, Capybara,Haml
   Datamapper no longer activly developed.
   Warnings running rspec due to Deprications in datamapper
 
-
+## Setup
+	
+	` bundle install `
 
 ### Elasticsearch
-```
-elasticsearch -f
-```
+Version: 1.2.1, Build: 6c95b75/2014-06-03T15:02:52Z, JVM: 1.7.0_60
 
-    Import all indices from `app/models` (or use DIR environment variable).
+To run in the foreground: ` elasticsearch path.conf=/usr/local/Cellar/elasticsearch/0.19.3/config/ `
+
+Import all indices from `app/models` (or use DIR environment variable).
 ````    
     $ rake environment elasticsearch:import:all DIR=app/models
 ````
