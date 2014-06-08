@@ -87,6 +87,7 @@ group :development, :test do
 	gem 'rack-livereload' # used with guard livereload
 	gem "faker"
 	gem 'dm-rspec' # datamapper - rspec
+	gem "poltergeist"
 end
 
 group :test do
