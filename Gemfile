@@ -37,6 +37,7 @@ gem 'dm-aggregates',   DM_VERSION
 gem 'dm-timestamps',   DM_VERSION
 gem 'dm-observer',     DM_VERSION
 
+gem 'database_cleaner', '~> 1.3.0'
 ##
 gem 'bootstrap-sass'
 gem 'will_paginate', '~> 3.0'
