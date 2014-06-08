@@ -6,6 +6,7 @@ feature "Uploads", :type => :feature do
   	click_link 'Upload'
   	fill_in "Title", with: "My Photo"
   	fill_in "Description", with: "Holidays"
+    attach_file('picture_file', File.join(Rails.root, 'spec', 'fixtures', 'picture.jpeg'))
   	click_button "Save"
 
   	expect(page).to have_content 'Holidays'

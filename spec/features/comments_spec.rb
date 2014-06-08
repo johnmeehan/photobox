@@ -12,7 +12,8 @@ feature "Comments", :type => :feature do
   	expect(page).to have_text("Comments")
   end
 
-  scenario 'post comment', js: true do
+  
+  scenario 'post comment' do
   	fill_in 'comment_content', with: 'hello world'
   	click_button 'Post'
   	expect(page.body).to have_text 'hello world' 
