@@ -7,7 +7,7 @@ feature "Elasticsearch", :type => :feature do
 		FactoryGirl.create(:picture, title: "Concert", description: "Limerick")
 	}
 
-	scenario "search present" do 
+	scenario "search bar present" do 
 		visit root_path 
 		expect(page).to have_css(".search")
 	end
@@ -27,7 +27,7 @@ feature "Elasticsearch", :type => :feature do
 		expect(page).to have_css("#picture", count: 1) 
 	end
 
-	scenario "Search for multiple results" do
+	scenario "A Search with multiple results" do
 		visit root_path 
 		fill_in "query", with: 'Limerick'
 		click_button "Search"

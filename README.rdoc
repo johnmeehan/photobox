@@ -25,7 +25,7 @@ Elasticsearch, Datamapper, Carrierwave, Rails, Rspec, Capybara,Haml
 ### Elasticsearch
 Version: 1.2.1, Build: 6c95b75/2014-06-03T15:02:52Z, JVM: 1.7.0_60
 
-To run in the foreground: ` elasticsearch path.conf=/usr/local/Cellar/elasticsearch/0.19.3/config/ `
+To run in the foreground: ` elasticsearch path.conf=/usr/local/Cellar/elasticsearch/1.2.1/config/ `
 
 Import all indices from `app/models` (or use DIR environment variable).
 ````    
