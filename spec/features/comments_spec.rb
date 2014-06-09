@@ -13,11 +13,15 @@ feature "Comments", :type => :feature do
   	expect(page).to have_text("Comments")
   end
   
-  scenario 'post comment', js: true  do
+  scenario 'post a comment', js: true  do
   	expect(page).to_not have_text 'hello world'
     fill_in 'comment_content', with: 'hello world'
   	click_button 'Post'
   	expect(page.body).to have_text 'hello world' 
+  end
+
+  scenario 'Show Comments Link' do
+    expect(page).to have_link 'Show Comments'
   end
 end
 

@@ -11,6 +11,9 @@ require 'active_resource/railtie'
 require 'rails/test_unit/railtie'
 require "will_paginate/data_mapper"
 require 'elasticsearch/model'
+
+# require 'rubygems'
+# require 'tire'
 # require 'data_mapper'
 # require 'tire'
 if defined?(Bundler)

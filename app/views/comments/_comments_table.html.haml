@@ -1,9 +1,9 @@
-
 .panel.panel-info 
 	.panel-heading
-		#{@picture.comments.count} Comments 
+		#{@comments_found.count} Comments 
 	%table.table.table-striped
-		%tbody
-			- @picture.comments.each do |comment|
-				%tr 
-					%td= comment.content
+		-if @comments_found.count > 0 
+			%tbody
+				- @comments_found.each do |comment|
+					%tr 
+						%td= comment.content

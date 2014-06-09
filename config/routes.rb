@@ -6,7 +6,9 @@ Photobox::Application.routes.draw do
   resources :pictures do 
     collection { get :search }
   end
-  resources :comments, only: [:create, :destroy]
+  resources :comments, only: [:create, :destroy] do 
+    collection { get :search }
+  end
  
 
   # The priority is based upon order of creation:

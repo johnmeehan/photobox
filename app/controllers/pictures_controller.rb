@@ -17,7 +17,7 @@ class PicturesController < ApplicationController
   def show
     @picture = Picture.get(params[:id])
     @comment = Comment.new
-    @comments = @picture.comments
+    # @comments = @picture.comments  #now getting from ES!
 
     respond_to do |format|
       format.html # show.html.erb

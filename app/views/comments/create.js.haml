@@ -1,3 +1,4 @@
-$("#comments").html("#{escape_javascript(render('comments/comments_table'))}")
+// Render the comment field
 $("#comment_form").html("#{escape_javascript(render('comments/comment'))}")	
+// Reset its value
 $("#comment_content").val('')

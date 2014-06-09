@@ -8,10 +8,20 @@ RSpec.describe CommentsController, :type => :controller do
         xhr :post, :create, comment: {content: "Hi", picture_id: picture.id }
       end.to change(Comment, :count).by(1)
     end
+    it 'responds with success', :js => true do 
+      xhr :post, :create, comment: {content: "Hello", picture_id: picture.id }
+      expect(response).to be_success
+    end
   end
 
-  it 'responds with success', :js => true do 
-    xhr :post, :create, comment: {content: "Hello", picture_id: picture.id }
-    expect(response).to be_success
+  describe "Index" do
+    it "retrieves a pictures comments" do 
+      @picture = FactoryGirl.create(:picture,:attachment)
+      @comment = FactoryGirl.create(:comment)
+      @picture.comments << @comments
+
+      get :index, { id: @picture.id }
+      expect().to include @comment 
+    end
   end
 end

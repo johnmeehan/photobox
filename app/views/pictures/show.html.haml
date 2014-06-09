@@ -15,7 +15,8 @@
 
 .row#comment_form
 	= render 'comments/comment', object: @comment
+	= link_to 'Show Comments', search_comments_path(picture_id: @picture.id), id: 'show_comments',class: "btn btn-info", remote: true
 .row#comments 
-	= render "comments/comments_table", object: @picture
+-# 	= render "comments/comments_table", object: @picture
 
 
