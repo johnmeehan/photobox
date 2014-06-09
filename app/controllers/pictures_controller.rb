@@ -2,11 +2,11 @@ class PicturesController < ApplicationController
   # GET /pictures
   # GET /pictures.json
   def index
-    if params[:query].present?
-      @pictures = Picture.search(params[:query]).records
-    else
+    # if params[:query].present?
+    #   @pictures = Picture.search(params[:query]).records
+    # else
       @pictures = Picture.paginate(:page => params[:page], :per_page => 5)
-    end
+    # end
 
     respond_to do |format|
       format.html # index.html.erb
