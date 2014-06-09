@@ -2,12 +2,7 @@ class PicturesController < ApplicationController
   # GET /pictures
   # GET /pictures.json
   def index
-    # if params[:query].present?
-    #   @pictures = Picture.search(params[:query]).records
-    # else
-      @pictures = Picture.paginate(:page => params[:page], :per_page => 5)
-    # end
-
+    @pictures = Picture.paginate(:page => params[:page], :per_page => 5)
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @pictures }
@@ -19,8 +14,6 @@ class PicturesController < ApplicationController
     render action: "index"
   end
 
-  # GET /pictures/1
-  # GET /pictures/1.json
   def show
     @picture = Picture.get(params[:id])
     @comment = Comment.new
@@ -32,8 +25,6 @@ class PicturesController < ApplicationController
     end
   end
 
-  # GET /pictures/new
-  # GET /pictures/new.json
   def new
     @picture = Picture.new
 
@@ -49,7 +40,6 @@ class PicturesController < ApplicationController
   end
 
   # POST /pictures
-  # POST /pictures.json
   def create
     @picture = Picture.new(params[:picture])
 
