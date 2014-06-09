@@ -14,6 +14,11 @@ class PicturesController < ApplicationController
     end
   end
 
+  def search
+    @pictures = Picture.search(params[:query]).records
+    render action: "index"
+  end
+
   # GET /pictures/1
   # GET /pictures/1.json
   def show
