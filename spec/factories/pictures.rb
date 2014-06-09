@@ -6,11 +6,7 @@ FactoryGirl.define do
     description "MyText"
 
     trait :attachment do 
-    	# file { File.new('#{Rails.root}/spec/fixtures/coke.jpg', 'image/jpg') }
-    	file { File.new("#{Rails.root}/spec/fixtures/coke.jpeg") }
-    	# file {fixture_file_upload('spec/fixtures/coke.jpg', "image/jpg")}
-    	# file  {File.join(Rails.root, 'spec','fixtures','coke.jpg')}	
-    	# file ActionDispatch::Http::UploadedFile.new(:tempfile => File.new("#{Rails.root}/spec/fixtures/coke.jpg"), :filename => "coke.jpg")
+    	file { File.new("#{Rails.root}/spec/fixtures/picture.jpeg") }
     end
   end
 end
