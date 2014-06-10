@@ -319,6 +319,7 @@ DEPENDENCIES
   dm-types (~> 1.2.0)
   dm-validations (~> 1.2.0)
   elasticsearch!
+  elasticsearch-api!
   elasticsearch-model!
   elasticsearch-persistence!
   elasticsearch-rails!

@@ -14,14 +14,14 @@ RSpec.describe CommentsController, :type => :controller do
     end
   end
 
-  describe "Index" do
+  describe "Search" do
     it "retrieves a pictures comments" do 
       @picture = FactoryGirl.create(:picture,:attachment)
       @comment = FactoryGirl.create(:comment)
       @picture.comments << @comments
 
-      get :index, { id: @picture.id }
-      expect().to include @comment 
+      get :search, { id: @picture.id }
+      expect(assigns[:comments_found]).to include @comment 
     end
   end
 end

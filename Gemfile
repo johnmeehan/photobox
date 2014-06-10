@@ -53,7 +53,7 @@ gem "elasticsearch", 		git: "git://github.com/elasticsearch/elasticsearch-ruby.g
 gem 'elasticsearch-model', 	git: 'git://github.com/elasticsearch/elasticsearch-rails.git'
 gem 'elasticsearch-rails', 	git: 'git://github.com/elasticsearch/elasticsearch-rails.git'
 gem 'elasticsearch-persistence', git: 'git://github.com/elasticsearch/elasticsearch-rails.git'
-
+gem 'elasticsearch-api', git: 'git://github.com/elasticsearch/elasticsearch-ruby.git'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
